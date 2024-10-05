@@ -1,23 +1,31 @@
-import logo from "./hlogo.jpg";
-// import favicon from "./hfavicon.ico";
-import "./App.css";
+import HolbertonLogo from './HolbertonLogo.jpg';
+import './App.css';
+import { getFullYear, getFooterCopy } from './utils';
+import { Notifications} from './Notifications';
 
 function App() {
   return (
-    <div>
-      <header className="App-header">
-        <img src={logo} alt="logo" />
-        <h1>School dashboard</h1>
-      </header>
-
-      <div className="App-body">
-        <p>Login to access the full dashboard</p>
+    <div className="App">
+      <div className='root-notifications'>
+        {Notifications()}
+      </div>
+      <div className="App-header">
+       <img className='App-logo' src={HolbertonLogo} alt='logo'></img>
+       <h1>School dashboard</h1>
       </div>
 
-      <footer className="App-footer">
-        <p>Copyright 2024 - holberton School</p>
-      </footer>
+      <div className='App-body'>
+        <p>Login to access the full dashboard</p>
+      </div>
+      <div className='App-footer'>
+        <p>
+          {getFullYear()} {getFooterCopy()}
+        </p>
+      </div>
+
     </div>
+
+    
   );
 }
 
